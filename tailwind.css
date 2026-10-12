@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,600|Inter:600|Rubik:500");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .all-unset {
+    all: unset;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+    background-image: radial-gradient(circle at top, rgba(94, 125, 233, 0.08), transparent 30%);
+  }
+}
+
+:root {
+  --desktop-body-2-400-font-family: "Switzer", Helvetica;
+  --desktop-body-2-400-font-size: 16px;
+  --desktop-body-2-400-font-style: normal;
+  --desktop-body-2-400-font-weight: 400;
+  --desktop-body-2-400-letter-spacing: 0px;
+  --desktop-body-2-400-line-height: 140%;
+  --duotone: rgba(126, 134, 158, 0.25);
+  --fillicon: rgba(34, 34, 34, 1);
+  --greygrey-60: rgba(233, 233, 234, 1);
+  --greygrey-600: rgba(30, 31, 34, 1);
+  --greygrey-80: rgba(160, 161, 163, 1);
+  --greygrey-900: rgba(16, 17, 18, 1);
+  --light: rgba(255, 255, 255, 1);
+  --mobile-buttons-2-600-font-family: "Be Vietnam Pro", Helvetica;
+  --mobile-buttons-2-600-font-size: 14px;
+  --mobile-buttons-2-600-font-style: normal;
+  --mobile-buttons-2-600-font-weight: 600;
+  --mobile-buttons-2-600-letter-spacing: 0px;
+  --mobile-buttons-2-600-line-height: 100%;
+  --mobile-input-2-500-font-family: "Be Vietnam Pro", Helvetica;
+  --mobile-input-2-500-font-size: 14px;
+  --mobile-input-2-500-font-style: normal;
+  --mobile-input-2-500-font-weight: 500;
+  --mobile-input-2-500-letter-spacing: 0px;
+  --mobile-input-2-500-line-height: 100%;
+  --mobile-input-3-500-font-family: "Satoshi", Helvetica;
+  --mobile-input-3-500-font-size: 12px;
+  --mobile-input-3-500-font-style: normal;
+  --mobile-input-3-500-font-weight: 500;
+  --mobile-input-3-500-letter-spacing: 0px;
+  --mobile-input-3-500-line-height: 100%;
+  --neutraln-0: rgba(255, 255, 255, 1);
+  --neutraln-1: rgba(255, 255, 255, 1);
+  --neutraln-13: rgba(11, 11, 11, 1);
+  --neutralsn-0: rgba(255, 255, 255, 1);
+  --neutralsn-100: rgba(145, 145, 145, 1);
+  --neutralsn-20: rgba(245, 245, 245, 1);
+  --neutralsn-30: rgba(240, 240, 240, 1);
+  --neutralsn-300: rgba(77, 77, 77, 1);
+  --neutralsn-40: rgba(218, 218, 218, 1);
+  --neutralsn-700: rgba(11, 11, 11, 1);
+  --neutralswhte: rgba(252, 252, 252, 1);
+  --newneutraln-13: rgba(12, 6, 1, 1);
+  --newneutraln-7: rgba(146, 143, 141, 1);
+  --primary-blueblue-400: rgba(80, 125, 227, 1);
+  --primary-blueblue-500-main: rgba(42, 96, 221, 1);
+  --primary-blueblue-900: rgba(19, 43, 99, 1);
+  --primaryp13-default: rgba(231, 67, 15, 1);
+  --secondary-orangeorange-100: rgba(255, 233, 194, 1);
+  --secondary-orangeorange-200: rgba(255, 216, 145, 1);
+  --secondary-orangeorange-300: rgba(255, 198, 94, 1);
+  --secondary-orangeorange-400: rgba(255, 180, 46, 1);
+  --secondary-orangeorange-500-main: rgba(255, 164, 0, 1);
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+.animate-hero-spin {
+  animation: hero-spin 30s linear infinite;
+  transform-origin: center;
+}
+
+button {
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+a {
+  transition:
+    color 200ms ease,
+    opacity 200ms ease,
+    text-decoration-color 200ms ease;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes hero-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-hero-spin {
+    animation: hero-spin 30s linear infinite !important;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+.team-media {
+  width: var(--w);
+  height: var(--h);
+  left: var(--x);
+  top: var(--y);
+}
+
+.team-media-fill {
+  width: 125%;
+  height: 125%;
+  left: -12.5%;
+  top: -12.5%;
+}
+
+.team-media img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.team-tint {
+  opacity: 0;
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.team-chip {
+  transition: transform 750ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1024px) {
+  .team-media {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .team-media img {
+    filter: grayscale(0.7);
+    transition: filter 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .team-tint {
+    opacity: 1;
+  }
+
+  .team-chip {
+    transform: translateY(calc(100% + 2rem));
+  }
+
+  .team-card:hover .team-media img {
+    filter: none;
+  }
+
+  .team-card:hover .team-tint {
+    opacity: 0;
+  }
+
+  .team-card:hover .team-chip {
+    transform: translateY(0);
+  }
+}
